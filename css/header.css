@@ -1,0 +1,296 @@
+:root {
+    /* 基本設定 */
+    --std-width: 1024px;
+    --std-clr: #333;
+    --std-fz: ; /* 360-1920 */
+    --std-lh: 1.7;
+    --std-ls: 0;
+  
+    /* 色 */
+    --clr-base: #9b1d22; /* 基本色 */
+    --clr-err: #bb2649; /* 注意喚起 */
+    /* メインカラー */
+    --clr-main-01: #;
+    --clr-main-02: #;
+    --clr-main-03: #;
+  
+    /* 多用カラー */
+    --clr-white: #fff;
+    --clr-light-gray: #a7a7a7;
+    --clr-gray: #717273;
+  
+    /* サブカラー */
+    --clr-sub-01: #ea97ad;
+    --clr-sub-02: #cf8f88;
+    --clr-sub-03: #d0635c;
+    --clr-sub-04: #df736b;
+    --clr-sub-05: #9c1c21;
+    --clr-sub-06: #ce92a0;
+    --clr-sub-07: #ede7d7;
+    --clr-sub-08: #fcccd1;
+    --clr-sub-09: #eed6d6;
+    /* デコレーション線 */
+    --clr-dec-line-01: #b9dbfd;
+    --clr-dec-line-02: #f1dda1;
+    --clr-dec-line-03: #f4c4c9;
+    /* アクセントカラー */
+    --clr-acc-01: #fecd04;
+    --clr-acc-02: #fff9ea;
+    --clr-acc-03: #ffcc89;
+  
+    /* フォントサイズ */
+    --fz-h1: ; /* 360-1920 */
+    --fz-h2: ; /* 360-1920 */
+    --fz-h3: ; /* 360-1920 */
+    --fz-h4: ; /* 360-1920 */
+    --fz-h5: ; /* 360-1920 */
+    --fz-h6: var(--fz-M);
+    --fz-L: ; /* 360-1920 */
+    --fz-M: ; /* 360-1920 */
+    --fz-R: ; /* 360-1920 */
+    --fz-S: 12px;
+  
+    /* 調整用 */
+    --adj-100: 100px;
+    --adj-90: 90px;
+    --adj-80: 80px;
+    --adj-70: 70px;
+    --adj-60: 60px;
+    --adj-50: 50px;
+    --adj-40: 40px;
+    --adj-30: 30px;
+    --adj-20: 20px;
+    --adj-20: 10px;
+  
+    --TH-height: ;
+    --sec-padding: ;
+    --inner-width-16: clamp(1000px, -1.5rem + 99.6vw, 1576px);
+    --inner-width-10: min(96%, 1000px);
+    --inner-gap: 12px;
+  }
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+      sans-serif;
+  }
+  
+  body {
+    color: var(--std-clr);
+    line-height: var(--std-lh);
+  }
+  
+  /* ヘッダー */
+  /* 
+  body {
+      font-family: 'Bokutachi no Gothic 2', sans-serif;
+  } */
+  
+  .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: white;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #888;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* ハンバーガーメニューがアクティブ時のアニメーション */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* レスポンシブ対応 */
+@media (max-width: 768px) {
+    /* ヘッダー */
+    
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .logo-container {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  
+  .school-name h2 {
+    font-size: 20px;
+  }
+
+  .school-name h1 {
+    font-size: 28px;
+  }
+
+  .buttons {
+    /* width: 100%; */
+    font-size: 16px;
+    padding: 12px 25px;
+    min-width: 150px;
+  }
+  
+  .btn {
+    font-size: 15px;
+    min-width: 150px;
+    padding: 12px 25px;
+  }
+
+   /* ハンバーガーメニューを表示 */
+   .hamburger {
+    display: flex;
+  }
+
+  /* ナビゲーションメニューを隠す */
+  
+  /* ナビゲーション */
+  .navigation {
+    display: none;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px 0;
+    margin-top: 10px;
+  }
+
+  /* メニューがアクティブ時に表示 */
+  .navigation.active {
+    display: flex;
+  }
+  
+  .navigation::before,
+  .navigation::after {
+    display: none;
+  }
+
+
+  .nav-item {
+    font-size: 20px;
+    padding: 15px 30px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    background-color: #f8f9fa;
+  }
+
+  .nav-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+/* さらに小さい画面用 */
+/* 480px以下の追加レスポンシブ対応 */
+@media (max-width: 480px) {
+    /* ヘッダー */
+    .header {
+        padding: 10px;
+        gap: 15px;
+    }
+  
+    .logo-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+    
+    .logo {
+        width: 80px;
+    }
+  
+    .school-name {
+      margin-left: 0;
+    }
+    
+    .school-name h2 {
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+    
+    .school-name h1 {
+        font-size: 22px;
+    }
+    
+    .buttons {
+      flex-direction: column;
+      width: 54%;
+      gap: 8px;
+    }
+  
+    .btn {
+      font-size: 16px;
+      padding: 10px 20px;
+      min-width: auto;
+      width: 100%;
+      max-width: 200px;
+    }
+  
+     /* ハンバーガーメニューのサイズ調整 */
+     .hamburger {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .hamburger span {
+      width: 24px;
+      height: 3px;
+      background-color: #333;
+    }
+    
+    /* ナビゲーション */
+    .navigation {
+      padding: 15px 0px;
+    }
+  
+  
+    .nav-item {
+      font-size: 18px;
+      padding: 12px 20px;
+    }
+}  
