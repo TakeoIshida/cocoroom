@@ -89,11 +89,17 @@ body {
 } */
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+    
 }
 
 .logo-container {
@@ -158,18 +164,25 @@ body {
 }
 
 .btn {
-  background-color: #9b2226;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 21.4px;
-  display: inline-block;
-  text-align: center;
-  min-width: 180px;
-  border: none;
-  box-shadow: inset 0 0 0 8px white;
+  background-color: var(--clr-base);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px solid var(--clr-white);
+  border-radius: 27px;
 }
 
 .navigation {
@@ -235,7 +248,8 @@ body {
     display: flex;
     align-items: center;
     padding: 0;
-    margin: 0;
+    margin-top: 80px;
+    /* margin: 0; */
 }
 
 .cc-hero-content {
@@ -945,6 +959,156 @@ body {
       font-size: 13.7px;
       letter-spacing: 0.05em;
   }
+
+  /* 保育所等訪問支援 */
+
+  .cc-support-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+}
+
+.cc-support-content-section {
+    flex: 1;
+    padding: 40px;
+    background-color: white;
+}
+
+.image-section {
+    flex: 1;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect width="400" height="600" fill="%23e8f4f8"/><rect x="50" y="100" width="300" height="200" fill="%23fff" rx="10"/><circle cx="120" cy="180" r="20" fill="%23ffb347"/><circle cx="180" cy="160" r="18" fill="%2398d8c8"/><circle cx="240" cy="170" r="22" fill="%23f7dc6f"/><circle cx="280" cy="190" r="19" fill="%23bb8fce"/><rect x="100" y="220" width="200" height="60" fill="%23a3d977" rx="5"/><text x="200" y="255" text-anchor="middle" font-size="14" fill="white">楽しい活動の様子</text></svg>') center/cover;
+    position: relative;
+}
+
+.cc-support-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cc-support-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.cc-support-main-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+.decorative-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot:nth-child(1) { background-color: #87ceeb; }
+.dot:nth-child(2) { background-color: #98fb98; }
+.dot:nth-child(3) { background-color: #ffb6c1; }
+.dot:nth-child(4) { background-color: #f0e68c; }
+.dot:nth-child(5) { background-color: #dda0dd; }
+
+.cc-suppot-description {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.cc-support-highlight-section {
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 25px 0;
+    border-left: 4px solid #ff9800;
+}
+
+.cc-support-contact-section {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 2px dashed #ddd;
+}
+
+.cc-support-contact-title {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.cc-support-contact-subtitle {
+    font-size: 16px;
+    color: #d32f2f;
+    margin-bottom: 20px;
+}
+
+.cc-support-phone-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cc-support-phone-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #4caf50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 12px;
+}
+
+.cc-support-cta-button {
+    background: linear-gradient(45deg, #ff9800, #ffc107);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+.cc-support-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .cc-support-container {
+        flex-direction: column;
+    }
+    
+    .cc-support-content-section {
+        padding: 20px;
+    }
+    
+    .cc-support-main-title {
+        font-size: 24px;
+    }
+    
+    .image-section {
+        min-height: 300px;
+    }
+}
 
   @media (max-width: 768px) {
       .footer-content {

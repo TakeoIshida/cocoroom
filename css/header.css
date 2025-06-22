@@ -94,6 +94,11 @@
       align-items: center;
       padding: 20px 50px;
       background-color: white;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
   }
   .logo-container {
     display: flex;
@@ -104,6 +109,89 @@
     width: 120px;
     height: auto;
 }
+
+
+  .buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+.btn {
+    background-color: var(--clr-base);
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border: 1px solid var(--clr-white);
+    border-radius: 27px;
+  }
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 15px 0;
+    max-width: 1200px;
+    
+}
+
+/* 左端の縦線 */
+.navigation::before {
+  content: "";
+  position: relative;
+  top: 20px;
+  left: 3%;
+  transform: translateY(-50%);
+  height: 37px;
+  width: 3px;
+  background-color: #ffc107;
+}
+
+.navigation::after {
+  content: "";
+  position: relative;
+  right: 3%;
+  top: 20px;
+  transform: translateY(-50%);
+  height: 37px;
+  width: 3px;
+  background-color: #ffc107;
+}
+
+
+.nav-item {
+    position: relative;
+    padding: 0 10px;
+    color: #888;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+  /* nav-itemの間の縦線 */
+  .nav-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    width: 3px;
+    background-color: #ffc107;
+}
+  
 
 .hamburger {
     display: none;
