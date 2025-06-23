@@ -967,20 +967,33 @@ body {
 
   .cc-support-container {
     display: flex;
-    min-height: 100vh;
-    background-color: #f8f9fa;
+    min-height: 400px;
 }
 
 .cc-support-content-section {
-    flex: 1;
+    flex: 1 1 50%;
     padding: 40px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.image-section {
-    flex: 1;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 600"><rect width="400" height="600" fill="%23e8f4f8"/><rect x="50" y="100" width="300" height="200" fill="%23fff" rx="10"/><circle cx="120" cy="180" r="20" fill="%23ffb347"/><circle cx="180" cy="160" r="18" fill="%2398d8c8"/><circle cx="240" cy="170" r="22" fill="%23f7dc6f"/><circle cx="280" cy="190" r="19" fill="%23bb8fce"/><rect x="100" y="220" width="200" height="60" fill="%23a3d977" rx="5"/><text x="200" y="255" text-anchor="middle" font-size="14" fill="white">楽しい活動の様子</text></svg>') center/cover;
-    position: relative;
+.cc-image-section {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8f9fa;
+    overflow: hidden;
+}
+
+.cc-image-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    max-height: 100%;
 }
 
 .cc-support-header {
@@ -989,33 +1002,36 @@ body {
 }
 
 .cc-support-subtitle {
-    font-size: 14px;
+    font-size: 18px;
     color:#9b2226;
     margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
 }
 
 .cc-support-subtitle::before,
 .cc-support-subtitle::after {
     content: "";
     position: absolute;
-    top: 321%;
+    top: 50%;
     width: 30px;
-    height: 1px;
+    height: 1.5px;
     background-color: #9b2226;
+    transform: translateY(-50%) rotate(30deg);
 }
 
 .cc-support-subtitle::before {
-    left: 188px;
-    transform: rotate(30deg);
+    left: -38px;
+    transform: translateY(-50%) rotate(30deg);
 }
 
 .cc-support-subtitle::after {
-  /* right: 188px; */
-  transform: rotate(-30deg);
+    right: -38px;
+    transform: translateY(-50%) rotate(-30deg);
 }
 
 .cc-support-main-title {
-    font-size: 28px;
+    font-size: 41.4px;
     font-weight: bold;
     color: #d32f2f;
     margin-bottom: 15px;
@@ -1029,7 +1045,7 @@ body {
 }
 
 .cc-suppot-description {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.8;
     margin-bottom: 25px;
     text-align: justify;
@@ -1057,7 +1073,7 @@ body {
 }
 
 .cc-support-contact-title span {
-    background-color: pink;
+    /* background-color: pink; */
     padding: 0.35em 0.4em;
     border-radius: 3px;
     /* line-height: 2.2; */
@@ -1108,6 +1124,34 @@ body {
 .cc-support-cta-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+}
+
+.cc-support-contact-img-left,
+.cc-support-contact-img-right {
+    height: 28px;
+    width: auto;
+    vertical-align: middle;
+    margin: 0 8px;
+}
+
+.cc-support-contact-title-row {
+    /* display: inline-flex; */
+    align-items: center;
+    justify-content: center;
+}
+
+.cc-support-contact-keyword {
+    background-color: pink;
+    padding: 0.35em 0.4em;
+    border-radius: 3px;
+    font-size: 20px;
+    color: #666;
+    font-weight: bold;
+    margin: -22px 6px;
+}
+
+.cc-support-contact-title-row img{
+  background-color: white;
 }
 
 @media (max-width: 768px) {
@@ -1882,3 +1926,4 @@ body {
       height: 12%;
   }
 }
+
