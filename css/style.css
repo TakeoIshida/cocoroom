@@ -73,14 +73,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
-    sans-serif;
+  /* font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo,
+    sans-serif; */
 }
 
+@font-face {
+  font-family: 'Boku2';
+  src: url('../boku2r//Boku2-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* フォントの使用例 */
 body {
+  font-family: 'Boku2', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+}
+
+/* h1, h2, h3 {
+  font-family: 'Boku2', serif;
+} */
+
+
+
+/* body {
   color: var(--std-clr);
   line-height: var(--std-lh);
-}
+} */
 
 /* ヘッダー */
 /* 

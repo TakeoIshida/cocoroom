@@ -100,7 +100,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 50px;
+      padding: 10px 50px 0px 50px;
       background-color: white;
   }
   .logo-container {
@@ -121,7 +121,7 @@
   color: #888;
   font-weight: normal;
   font-size: 28.7px;
-  margin-bottom: 5px;
+  margin-bottom: -30px;
 }
 
 .school-name h1 {
@@ -231,7 +231,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #888;
+    background-color: #9b2226;
     margin: 3px 0;
     transition: all 0.3s ease;
   }
@@ -256,16 +256,21 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /* justify-content: center; */
+  position: relative;
   }
   
   .logo-container {
+    flex: 1;
+    display: flex;
     justify-content: center;
-    margin-bottom: 0;
+    margin-left: 40px;
   }
   
   .school-name h2 {
     font-size: 20px;
+    padding: 10px 0px
   }
 
   .school-name h1 {
@@ -273,9 +278,11 @@
   }
 
   .buttons {
-    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     font-size: 16px;
-    padding: 12px 25px;
+    padding: 12px 30px;
     min-width: 150px;
   }
   
@@ -288,6 +295,10 @@
    /* ハンバーガーメニューを表示 */
    .hamburger {
     display: flex;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   /* ナビゲーションメニューを隠す */
@@ -345,7 +356,8 @@
     .logo-container {
       flex-direction: column;
       text-align: center;
-      gap: 10px;
+      /* gap: 10px; */
+      margin-left: 40px;
     }
     
     .logo {
@@ -357,12 +369,12 @@
     }
     
     .school-name h2 {
-        font-size: 16px;
-        margin-bottom: 3px;
+        font-size: 15px;
+        margin-bottom: -13px;
     }
     
     .school-name h1 {
-        font-size: 22px;
+        font-size: 18px;
     }
     
     .buttons {
@@ -373,7 +385,7 @@
   
     .btn {
       font-size: 16px;
-      padding: 10px 20px;
+      padding: 10px 45px;
       min-width: auto;
       width: 100%;
       max-width: 200px;
@@ -383,12 +395,13 @@
      .hamburger {
       width: 40px;
       height: 40px;
+      left: 10px;
     }
   
     .hamburger span {
       width: 24px;
       height: 3px;
-      background-color: #333;
+      background-color: #9b2226;
     }
     
     /* ナビゲーション */
