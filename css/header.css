@@ -369,12 +369,12 @@
     }
     
     .school-name h2 {
-        font-size: 15px;
+        font-size: 13px;
         margin-bottom: -13px;
     }
     
     .school-name h1 {
-        font-size: 18px;
+        font-size: 13px;
     }
     
     .buttons {
@@ -384,10 +384,11 @@
     }
   
     .btn {
-      font-size: 16px;
-      padding: 3px 42px;
+      font-size: 13px;
+      /* padding: 3px 42px; */
       min-width: auto;
       width: 100%;
+      text-align: center;
       max-width: 200px;
     }
   
